@@ -11,7 +11,15 @@ class Division {
         a = input.nextInt();
         b = input.nextInt();
 
-        result = a / b;
+        try {
+            result = a / b;
+        } catch (java.lang.ArithmeticException ex) {
+            System.out.println("Divide by Zero!");
+            result = 0;
+        }
+        finally {
+            System.out.println("finally block will execute.");
+        }
 
         System.out.println("Result = " + result);
     }
